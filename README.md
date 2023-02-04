@@ -3,4 +3,5 @@
 ## Technologies
     - Python
     - Django
+    - Docker
     - Postgres
