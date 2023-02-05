@@ -13,9 +13,8 @@ services:
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
     environment:
-      # container env variables
       - DB_HOST=db
-      - DB_NAME=devdb
+      - DB_NAME=postgres
       - DB_USER=devuser
       - DB_PASS=changeme
     depends_on:
@@ -26,7 +25,7 @@ services:
     volumes:
       - dev-db-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=devdb
+      - POSTGRES_DB=postgres
       - POSTGRES_USER=devuser
       - POSTGRES_PASSWORD=changeme
 
