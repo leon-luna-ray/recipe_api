@@ -11,7 +11,7 @@ class ModelTests(TestCase):
     def test_create_users_with_email_successful(self):
         """ Test creating a user with and email is sucessful """
 
-        email = 'test@email.com'
+        email = 'user@exmaple.com'
         password = 'testpass123'
         user = get_user_model().objects.create_user(
             email=email,
@@ -21,7 +21,7 @@ class ModelTests(TestCase):
         self.assertEqual(user.email, email)
         self.assertTrue(user.check_password(password))
 
-    def test_new_uer_email_normalized(self):
+    def test_new_user_email_normalized(self):
         """Test email is normalized for new users"""
 
         sample_emails = [
@@ -44,8 +44,8 @@ class ModelTests(TestCase):
         """Test create superuser"""
 
         user = get_user_model().objects.create_superuser(
-            'test@example.com',
-            'test123'
+            'admin@exmaple.com',
+            'test123',
         )
 
         self.assertTrue(user.is_superuser)
