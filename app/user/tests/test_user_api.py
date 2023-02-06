@@ -14,7 +14,7 @@ def create_user(**params):
     return get_user_model().objects.create_user(**params)
 
 
-class PublicUserApiTest(TestCase):
+class PublicUserApiTests(TestCase):
     """Test the public features of the user API."""
 
     def setUp(self):
@@ -52,7 +52,7 @@ class PublicUserApiTest(TestCase):
         """Test an error is returned if password is less than 5 char"""
         payload = {
             'email': 'test@example.com',
-            'password': 'testpass123',
+            'password': 'pw',
             'name': 'Test Name',
         }
 
