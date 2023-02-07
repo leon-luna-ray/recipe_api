@@ -123,7 +123,8 @@ class PrivateRecipeApiTests(TestCase):
 
     def test_partial_update(self):
         """Test partial update of a recipe"""
-        original_link = 'http://example.com/recipe.pdf',
+        # This is not working
+        original_link = 'https://example.com/recipe.pdf',
         recipe = create_recipe(
             user=self.user,
             title='Sample recipe title',
