@@ -134,9 +134,6 @@ class PrivateRecipeApiTests(TestCase):
         payload = {'title': 'New recipe title'}
         url = detail_url(recipe.id)
         res = self.client.patch(url, payload)
-        print(f'✅ {recipe.link}')
-        print(f'✅ {original_link}')
-        print()
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         # Specify to refresh values from database (not automatic)
         recipe.refresh_from_db()
